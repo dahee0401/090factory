@@ -96,6 +96,11 @@ html.fp-enabled {
 	-webkit-transform: translate3d(0, -50%, 0);
 	right: 68px;
 }
+@media screen and (max-width: 768px) {
+	#fp-nav {
+		right: 20px;
+	}
+}
 #fp-nav.fp-right {
 	right: 17px;
 }
