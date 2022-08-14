@@ -8,10 +8,12 @@ $(document).ready(function () {
 		controlArrows: false,
 
 		afterLoad: function (anchorLink, index) {
-			$('.section').animate({ opacity: 1 }, 2500, 'linear')
+			$('.section').eq(index).animate({ opacity: 1 }, 1000, 'linear')
 		},
 	})
-
+	window.addEventListener('load', function () {
+		$('.section').eq(0).animate({ opacity: 1 }, 1000, 'linear')
+	})
 	//left menu 활성화
 	const $leftMenu = $('#left_menu>li')
 	const $callMenu = $('.call_mnu')
@@ -42,5 +44,18 @@ $(document).ready(function () {
 	})
 	$clse.on('click', function () {
 		$Mnubg.fadeOut(500)
+	})
+
+	const $search = $('#r_search')
+	const $searchClse = $('.close_btn')
+	$search.on('click', function (e) {
+		e.preventDefault()
+		$('#searchBarForm').stop().slideDown()
+		$('.search_header').addClass('active')
+	})
+	$searchClse.on('click', function (e) {
+		e.preventDefault()
+		$('#searchBarForm').stop().slideUp(300)
+		$('.search_header').removeClass('active')
 	})
 })

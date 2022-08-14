@@ -198,17 +198,23 @@ button {
 	padding-bottom: 20px;
 	text-align: center;
 }
+
 #right #r_search a {
+	display: block;
 	width: 40px;
 	padding: 11px 0;
 	line-height: 18px;
 	font-size: 18px;
 	text-align: center;
-	background: rgba(255, 255, 255, 0);
 	margin: 5px;
 	color: #000;
-	display: block;
+	transition: all 0.5s ease;
 }
+#right #side_on a:hover,
+#right #r_search a:hover {
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
 #right #side_on a {
 	width: 40px;
 	padding: 11px 0;
@@ -219,6 +225,73 @@ button {
 	margin: 5px;
 	color: #000;
 	display: block;
+	transition: all 0.5s ease;
+}
+input,
+select,
+textarea {
+	vertical-align: middle;
+	border: 1px solid #000;
+}
+.search_header {
+	display: none;
+	position: fixed;
+	right: 60px;
+	top: 0;
+	width: 230px;
+	height: 0;
+	z-index: 9999999;
+	margin: 5px;
+	overflow: visible;
+	transition: all 0.5s ease;
+}
+.search_header.active {
+	height: 40px;
+	top: 55px;
+}
+.search_header #keyword {
+	width: 170px;
+	height: 21px;
+	padding: 10px;
+	border: 0;
+	line-height: 20px;
+	font-size: 16px;
+	color: #fff;
+	background: rgba(0, 0, 0, 1);
+}
+.search_header fieldset a {
+	width: 40px;
+	padding: 11px 0;
+	line-height: 18px;
+	font-size: 18px;
+	text-align: center;
+	background: rgba(0, 0, 0, 1);
+	margin: 0px;
+	vertical-align: middle;
+	color: #fff;
+	float: right;
+}
+img,
+fieldset {
+	border: none;
+	vertical-align: top;
+}
+.search_header .close_btn {
+	position: absolute;
+	left: 0px;
+	top: -20px;
+	font-size: 14px;
+}
+
+.close_btn a {
+	text-decoration: none;
+	color: #000;
+	transition-property: width, height, background-color, font-size, left, top, right, bottom, border, color, margin, opacity;
+	transition-duration: 0.5s;
+	transition-timing-function: ease;
+}
+#searchBarForm {
+	display: none;
 }
 /* snslink */
 #snslink {
@@ -287,7 +360,6 @@ button {
 .section:nth-child(1) {
 	background-image: url(./images/mainbn20w4.jpg);
 }
-
 #section1_wrap {
 	position: absolute;
 	left: 50%;
@@ -345,7 +417,6 @@ button {
 	height: 932px;
 	margin: 0 auto;
 }
-
 /* section 2nd */
 .cont2 {
 	text-align: center;
@@ -455,40 +526,75 @@ button {
 .side_menu ul > li:hover a {
 	color: var(--color-grey);
 }
-
+/* footer */
+.fp-auto-height.fp-section,
+.fp-auto-height.fp-slide,
+.fp-auto-height.fp-tableCell,
+.fp-auto-height {
+	height: auto !important;
+}
 /* 반응형 */
 @media screen and (max-width: 768px) {
+	.search_header {
+		right: 20px;
+		top: 0;
+		width: 160px;
+	}
+	.search_header.active {
+		top: 21px;
+	}
+	.search_header #keyword {
+		width: 100px;
+		height: 15px;
+	}
+	.search_header fieldset a {
+		height: 13px;
+		line-height: 18px;
+	}
+	.search_header fieldset a i {
+		line-height: 0.5;
+	}
+	#left_menu > li:nth-child(2),
+	#left_menu > li:nth-child(3),
+	#left_menu > li:nth-child(4),
+	#left_menu > li:nth-child(5),
+	#left_menu > li:nth-child(6),
+	#left_menu > li:nth-child(7),
+	#left_menu > li:nth-child(8) {
+		display: none;
+	}
 	#left {
-		padding: 0;
-		left: 5px;
-		top: 5px;
+		left: 20px;
+		top: 20px;
+		padding: 10px;
+		box-sizing: border-box;
 	}
 	#right {
-		right: 5px;
-		top: 5px;
-	}
-	#left_menu > .login_menu,
-	#left_menu > .about_menu,
-	#left_menu > .store_menu,
-	#left_menu > .comm_menu,
-	.look_menu,
-	.call_mnu,
-	.bank_mnu {
-		display: none;
+		right: 20px;
+		top: 20px;
+
+		box-sizing: border-box;
 	}
 	#left_menu .logo img {
 		width: 50%;
 		height: 50%;
 	}
-	#left {
-		left: 15px;
-		top: 15px;
+	#right > div {
+		padding: 0;
 	}
 	#left_menu li a {
 		font-size: 12px;
 	}
-	#left_menu .category li a {
-		font-size: 10px;
+	#section1_wrap {
+		top: 50%;
+	}
+	#section1_title04 > a > span,
+	#section2_title04 > a > span {
+		width: 70px;
+		height: 15px;
+		line-height: 15px;
+		bottom: 10%;
+		font-size: 12px;
 	}
 	#section1_title01,
 	#section2_title02 {
@@ -502,11 +608,6 @@ button {
 	#section2_title03 {
 		padding: 0px 30px;
 		font-size: 11px;
-	}
-	#section1_title04 > a > span,
-	#section2_title04 > a > span {
-		width: 120px;
-		height: 30px;
 	}
 	#section2_wrap {
 		position: absolute;
@@ -545,5 +646,13 @@ button {
 	.close_btn2 img {
 		width: 70%;
 		height: 70%;
+	}
+	#bottom {
+		margin: 30px;
+		padding: 30px 0;
+		background: rgba(255, 255, 255, 0);
+		z-index: 99;
+		color: #000;
+		text-align: center;
 	}
 }

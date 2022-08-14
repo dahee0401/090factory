@@ -94,6 +94,7 @@ html.fp-enabled {
 	transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	-webkit-transform: translate3d(0, -50%, 0);
+	right: 68px;
 }
 #fp-nav.fp-right {
 	right: 17px;

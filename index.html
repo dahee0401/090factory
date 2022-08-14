@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   <link href="http://fonts.googleapis.com/earlyaccess/nanumgothic.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./style.css">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.css" rel="stylesheet">
+  <link rel="stylesheet" href="./fullpage.min.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.6.6/jquery.fullPage.min.js"></script>
   <script src="./main.js"></script>
@@ -196,6 +196,15 @@
         <span class="toggle_img ease"><img src="./images/snslink_2_04.png"></span>
       </a>
     </div>
+    <form id="searchBarForm" action="#" method="get" target="_self" enctype="multipart/form-data">
+      <input id="banner_action" name="banner_action" type="hidden">
+      <div class="search_header " style="display: block;">
+        <fieldset><input id="keyword" name="keyword" fw-label="검색어" type="text"><a href="#none"><i class="fa fa-search"
+              aria-hidden="true"></i></a>
+        </fieldset>
+        <span class="close_btn"><a href="#none"><i class="fa fa-times" aria-hidden="true"></i></a></span>
+      </div>
+    </form>
     <div id="fullpage">
       <div class="section">
         <div class="fp-tableCell cont1">
@@ -237,7 +246,6 @@
         </div>
       </div>
       <div class="section cont3">
-
       </div>
       <div class="section cont4">
       </div>
